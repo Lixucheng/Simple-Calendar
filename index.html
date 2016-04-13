@@ -6,14 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen"> -->
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/simple-calendar.css">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <title>Simple-calendar by Lixucheng</title>
+    <style>
+      #calendar{
+        width: 100%
+      }
+      .clearfix{
+        margin-bottom: 50px !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -26,6 +35,12 @@
     </header>
 
     <div id="content-wrapper">
+  <div class="inner clearfix">
+      <div id = 'calendar'>
+
+      </div>
+    </div>
+
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
@@ -45,7 +60,7 @@
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>link rel<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span> href<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>css/simple-calendar.css<span class="pl-pds">"</span></span><span class="pl-k">&gt;</span>
 
-<span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/jacascrip<span class="pl-pds">"</span></span> src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>js/simple-calendar.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
+<span class="pl-k">&lt;</span>script type<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> src<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>js/simple-calendar.js<span class="pl-pds">"</span></span><span class="pl-k">&gt;&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
 
 <h2>
 <a id="初始化一个日历" class="anchor" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E6%97%A5%E5%8E%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>初始化一个日历</h2>
@@ -204,7 +219,7 @@ info  是要显示的信息</p>
 <a id="其他" class="anchor" href="#%E5%85%B6%E4%BB%96" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>其他</h3>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">//关闭或者显示国际节日</span>
-<span class="pl-en">showFestival</span>(<span class="pl-c1">false</span>); 
+<span class="pl-en">showFestival</span>(<span class="pl-c1">false</span>);
 <span class="pl-c">//关闭或者显示阴历日期</span>
 <span class="pl-en">showLunarCalendar</span>(<span class="pl-c1">false</span>);
 <span class="pl-c">//关闭或者显示假期</span>
@@ -234,6 +249,11 @@ info  是要显示的信息</p>
       </div>
     </div>
 
-  
+    <script type="text/javascript" src="javascripts/simple-calendar.js"></script>
+    <script>
+     var myCalendar = new SimpleCalendar('#calendar');
+    </script>
+
+
   </body>
 </html>
