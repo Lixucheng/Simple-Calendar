@@ -144,6 +144,11 @@
 .sc-actions-big{
   width: 50%;
 }
+@media screen and (max-width : 500px){
+.sc-actions{
+  width: 50%;
+}
+}
 .sc-header select {
   border-color: rgba(0, 0, 0, 0);
   padding: 0.2em;

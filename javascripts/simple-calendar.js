@@ -255,8 +255,8 @@ var SimpleCalendar = function () {
     //容器
     this.container = document.querySelector(query);
 
-    this._defaultOptions.width = this.container.style.width;
-    this._defaultOptions.height = this.container.style.height;
+    this._defaultOptions.width = this.container.style.offsetWidth;
+    this._defaultOptions.height = this.container.style.offsetHeight;
 
     //this._options = Object.assign({}, this._defaultOptions, options);
 
