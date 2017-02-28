@@ -41,6 +41,10 @@ var options = {
       showLunarFestival: true, //农历节日
       showSolarTerm: true, //节气
       showMark: true, //标记
+      //获取点击的日期
+      onselect: (day) => {
+        console.log(day);
+      },
       timeRange: {
         startYear: 1900,
         endYear: 2049

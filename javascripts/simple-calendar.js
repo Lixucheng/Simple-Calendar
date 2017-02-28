@@ -226,6 +226,7 @@ var SimpleCalendar = function () {
       showLunarFestival: true, //农历节日
       showSolarTerm: true, //节气
       showMark: true, //标记
+      onSelect: function onSelect() {},
       timeRange: {
         startYear: 1900,
         endYear: 2049
@@ -273,7 +274,13 @@ var SimpleCalendar = function () {
     key: 'optionAssign',
     value: function optionAssign(optionsA, optionsB) {
       for (var key in optionsB) {
-        if (_typeof(optionsA[key]) !== 'object') optionsA[key] = optionsB[key];else {
+        if (typeof optionsA[key] === 'function') {
+          if (typeof optionsB[key] === 'function') {
+            optionsA[key] = optionsB[key];
+          } else {
+            console.warn(key + ' must be a function');
+          }
+        } else if (_typeof(optionsA[key]) !== 'object') optionsA[key] = optionsB[key];else {
           optionsA[key] = this.optionAssign(optionsA[key], optionsB[key]);
         }
       }
@@ -616,6 +623,9 @@ var SimpleCalendar = function () {
           var pre = container.querySelector('.sc-selected');
           if (pre) pre.classList.remove('sc-selected');
           this.classList.add('sc-selected');
+          if (typeof calendar._options.onSelect === 'function') {
+            calendar._options.onSelect(calendar.getSelectedDay());
+          }
         };
       });
 
