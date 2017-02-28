@@ -41,7 +41,7 @@ var options = {
       showSolarTerm: true, //节气
       showMark: true, //标记
       //获取点击的日期
-      onselect: (day) => {
+      onSelect: (day) => {
         console.log(day);
       },
       timeRange: {
