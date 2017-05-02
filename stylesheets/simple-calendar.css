@@ -62,7 +62,9 @@
   background-color: #FFEBEC;
 }
 .sc-mark{
-  background-color: #E5FBFA;
+  /*background-color: #E5FBFA;*/
+  background-color: #FF005B;
+  color: #FFFFFF;
 }
 .sc-vocation:before {
   content: '休';

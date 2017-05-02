@@ -233,7 +233,7 @@ var SimpleCalendar = function () {
       },
       timeZone: "", //时区
       mark: {
-        '2016-5-5': '上学'
+        '2017-5-10': '上学'
       },
       theme: {
         changeAble: false,
@@ -483,6 +483,11 @@ var SimpleCalendar = function () {
 
             if (data[year + '-' + currentmonth + '-' + day]) {
               v.classList.add('sc-mark');
+
+              // 增强标签效果
+              var reminder = v.querySelector('.lunar-day');
+              reminder.innerText = data[year + '-' + currentmonth + '-' + day];
+
               v.title = data[year + '-' + currentmonth + '-' + day];
             } else {
               v.classList.remove('sc-mark');
