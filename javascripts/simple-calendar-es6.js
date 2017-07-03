@@ -36,21 +36,22 @@ class LunarHelp {
 
     this.year = i
     leap = this.leapMonth(i) //闰哪个月
-    this.isLeap = false
+    this.isLeap = 0 //0 不是 1是 2是并且计算完成
 
 
     //计算月数
     for (i = 1; i < 13 && offset > 0; i++) {
       //闰月
-      if (leap > 0 && i == (leap + 1) && this.isLeap == false) {
+      if (leap > 0 && i == (leap + 1) && this.isLeap == 0) {
         --i;
+        this.isLeap = 1;
         temp = this.leapDays(this.year);
       } else {
         temp = this.monthDays(this.year, i);
       }
 
       //解除闰月
-      if (this.isLeap == true && i == (leap + 1)) this.isLeap = false
+      if (this.isLeap == 1 && i == (leap + 1)) this.isLeap = 2
 
       offset -= temp
     }
@@ -58,9 +59,9 @@ class LunarHelp {
     //如果恰好减完了，不是闰月的话月数减1
     if (offset == 0 && leap > 0 && i == leap + 1)
       if (this.isLeap) {
-        this.isLeap = false;
+        this.isLeap = 0;
       } else {
-        this.isLeap = true;
+        this.isLeap = 1;
         --i;
       }
 
@@ -670,7 +671,14 @@ class SimpleCalendar {
     var selectYear = this.container.querySelector('.sc-select-year').value;
     var selectMonth = this.container.querySelector('.sc-select-month').value;
     var selectDay = this.selectDay.querySelector('.day').innerHTML;
-    return new Date(selectYear, selectMonth - 1, selectDay);
+
+    // 计算当前界面中的其他月份差
+    let count = 0;
+    if (this.selectDay.classList.contains('sc-othermenth')) {
+      if (+selectDay < 15) count++;
+      else count--;
+    }
+    return new Date(selectYear, selectMonth - 1 + count, selectDay);
   }
 
   //设置语言
@@ -784,8 +792,6 @@ SimpleCalendar.prototype.languageData = {
     '1-1': '春节',
     '2-2': '龙抬头',
     '1-15': '元宵节',
-    '4-4': '寒食节',
-    '4-5': '清明节',
     '5-5': '端午节',
     '8-15': '中秋节',
     '9-9': '重阳节',
