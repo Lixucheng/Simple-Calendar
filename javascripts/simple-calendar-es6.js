@@ -451,6 +451,11 @@ class SimpleCalendar {
 
           if (data[year + '-' + currentmonth + '-' + day]) {
             v.classList.add('sc-mark');
+
+            // 增强标签效果
+            var reminder = v.querySelector('.lunar-day');
+            reminder.innerText = data[year + '-' + currentmonth + '-' + day];
+
             v.title = data[year + '-' + currentmonth + '-' + day];
           } else {
             v.classList.remove('sc-mark');
