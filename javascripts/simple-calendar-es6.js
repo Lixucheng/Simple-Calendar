@@ -1,4 +1,3 @@
-
 class LunarHelp {
   constructor(year,month,day) {
     this.lunarInfo = new Array(

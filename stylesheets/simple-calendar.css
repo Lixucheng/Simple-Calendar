@@ -27,6 +27,7 @@
 }
 .sc-body {
   height: 93%;
+  height: calc(100% - 35px);
   clear: both;
   box-shadow: 2px 4px 5px #bdbdbd;
 }
@@ -35,22 +36,28 @@
   font-weight: 400;
   font-size: 20px;
   color: #4A4A4A;
+  margin-right: -8px;
 }
 .sc-days {
   height: 88%;
+  margin-right: -8px;
 }
 .sc-item {
+  position: relative;
   height: 20%;
+  height: calc(20% + 1px);
   float: left;
   font-weight: 600;
   color: #565555;
   width: 14.285%;
   padding-top: 10px;
   background-color: #ffffff;
-  border-width: 0 0 1px 1px;
+  border-width: 1px;
   border-color: #F1EBE4;
   border-style: solid;
   box-sizing: border-box;
+  margin-top: -1px;
+  margin-left: -1px;
 }
 .item-nolunar {
   padding-top: 20px;
@@ -83,7 +90,8 @@
   color: #C1C0C0 !important;
 }
 .sc-active-day, .sc-selected {
-  border: 1px solid orange;
+  border-color:  orange;
+  z-index: 1;
 }
 .sc-today {
   background-color: orange;
@@ -116,8 +124,9 @@
   float: left;
   width: 14.285%;
   background-color: #FBEC9C;
-  border-width: 1px 0 1px 1px;
+  border-width: 1px;
   border-color: #ECE3B1;
+  margin-left: -1px;
   border-style: solid;
   box-sizing: border-box;
   overflow: hidden;
