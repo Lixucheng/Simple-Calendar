@@ -99,7 +99,7 @@ class LunarHelp {
         break;
       default:
         s = this.nStr2[Math.floor(d / 10)];
-        s += this.nStr1[d % 10];
+        s += this.nStr1[Math.floor(d) % 10];
     }
     return s;
   }
